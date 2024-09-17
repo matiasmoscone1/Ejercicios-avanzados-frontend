@@ -11,15 +11,30 @@
     width: 80vw;
     height: 60vh;
     margin: auto;
+    row-gap: 2em;
 }
 
 .card-product{
     border: 1px solid black;
-    width: 5em;
-    height: 10em;
+    width: 10em;
+    height: 16em;
+    text-align: center;
+}
+
+.card-product-image{
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
 }
 
 .card-product li{
     list-style: none;
 }
 
+.btn-product{
+    width: 1.2em;
+    font-size: x-large;
+    cursor: pointer;
+}
