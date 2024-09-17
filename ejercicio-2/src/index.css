@@ -4,13 +4,21 @@
     box-sizing: border-box;
 }
 
+.section-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .products{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     width: 80vw;
     height: 60vh;
-    margin: auto;
+    /*margin: auto;*/
     row-gap: 2em;
 }
 
@@ -19,6 +27,7 @@
     width: 10em;
     height: 16em;
     text-align: center;
+    position: relative;
 }
 
 .card-product-image{
@@ -27,6 +36,8 @@
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black;
+    margin-bottom: 0.3em;
+    margin-top: 0.3em;
 }
 
 .card-product li{
@@ -37,4 +48,7 @@
     width: 1.2em;
     font-size: x-large;
     cursor: pointer;
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
 }

@@ -1,12 +1,11 @@
-import Products from "./components/Products"
-import Cart from "./components/Cart"
+
 import CartContextProvider from "./components/CartContextProvider"
+import PrincipalSection from "./components/PrincipalSection";
 
 function App() {
   return(
     <CartContextProvider>
-      <Products/>
-      <Cart/>
+      <PrincipalSection/>
     </CartContextProvider>
   )
   
