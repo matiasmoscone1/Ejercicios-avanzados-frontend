@@ -1,19 +1,24 @@
 
-
 const reducer = (state, action) => {
 
-    switch(state){
+    switch(action.type){
         case "ADD_PRODUCT": {
-            break;
+            return({...state, items: [...state, action.payload]});
         }
         case "REMOVE_PRODUCT": {
-            break;
+            return({...state, items: state.items.filter((item) => item.id !== action.payload)});
         }
         case "UPDATE_QUANTITY": {
-            break;
+            return({...state, items: state.items.map((item) => {
+                if(item.id === action.payload.id){
+                    item.quantity = action.payload.quantity;
+                }else{
+                    item;
+                }
+            })});
         }
         case "CLEAR_CART": {
-            break;
+            return({...state, items: [] });
         }
     }
 
