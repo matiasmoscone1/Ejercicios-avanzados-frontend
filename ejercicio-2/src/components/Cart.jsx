@@ -1,13 +1,14 @@
 
-
 const Cart = () => {
 
-    return(<></>);
+    return(<>
+    
+    </>);
 
 };
 
 
-
+export default Cart;
 
 
 

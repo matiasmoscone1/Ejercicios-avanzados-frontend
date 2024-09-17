@@ -1,8 +1,14 @@
+import Products from "./components/Products"
+import Cart from "./components/Cart"
+import CartContextProvider from "./components/CartContextProvider"
 
 function App() {
-  return(<div>
-    <h2>holaasdasd</h2>
-  </div>)
+  return(
+    <CartContextProvider>
+      <Products/>
+      <Cart/>
+    </CartContextProvider>
+  )
   
 }
 

@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width: 80vw;
+    height: 60vh;
+    margin: auto;
+}
+
+.card-product{
+    border: 1px solid black;
+    width: 5em;
+    height: 10em;
+}
+
+.card-product li{
+    list-style: none;
+}
+
