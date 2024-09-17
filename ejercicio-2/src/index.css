@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .products{
@@ -18,7 +19,6 @@
     grid-template-rows: auto;
     width: 80vw;
     height: 60vh;
-    /*margin: auto;*/
     row-gap: 2em;
 }
 
@@ -52,3 +52,22 @@
     bottom: 2%;
     right: 5%;
 }
+
+.cart-container{
+    position: absolute;
+    border: 1px solid black;
+    width: 10em;
+    height: 5em;
+    right: 10%;
+    top: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cart-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;   
+}
+
