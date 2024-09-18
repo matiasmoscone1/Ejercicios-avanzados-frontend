@@ -26,8 +26,10 @@ const Cart = () => {
         <button className="btn-view-cart" onClick={() => toggleModal()}>View cart</button>
     </div>
     {modal && 
-        <div>
-            
+        <div className="modal-container">
+            <div className="modal-overlay">
+
+            </div>
         </div>}
     </>
     );
