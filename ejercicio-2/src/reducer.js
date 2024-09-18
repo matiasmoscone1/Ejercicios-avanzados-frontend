@@ -3,7 +3,7 @@ const reducer = (state, action) => {
 
     switch(action.type){
         case "ADD_PRODUCT": {
-            return({...state, items: [...state, action.payload]});
+            return({...state, items: [...state.items, action.payload]});
         }
         case "REMOVE_PRODUCT": {
             return({...state, items: state.items.filter((item) => item.id !== action.payload)});

@@ -4,7 +4,7 @@ import { CartContext } from "./CartContextProvider";
 
 const Products = () => {
 
-    const { } = useContext(CartContext);
+    const { cart, addProduct } = useContext(CartContext);
 
     return(<div className="products">
         {dbProducts.map((product) => {
@@ -12,7 +12,7 @@ const Products = () => {
                 <li className="card-product-image">{product.image}</li>
                 <li>{product.article}</li>
                 <li>${product.price}</li>
-                <button className="btn-product">+</button>
+                <button className="btn-product" onClick={() => addProduct()}>+</button>
             </ul>)
         })}
     </div>)
