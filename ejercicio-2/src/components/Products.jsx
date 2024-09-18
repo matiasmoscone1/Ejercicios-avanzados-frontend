@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import dbProducts from "../database";
+import { CartContext } from "./CartContextProvider";
 
 const Products = () => {
+
+    const { } = useContext(CartContext);
 
     return(<div className="products">
         {dbProducts.map((product) => {
