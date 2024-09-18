@@ -6,11 +6,15 @@ const Cart = () => {
 
     const { cart } = useContext(CartContext);
 
-    console.log(cart);
+    let acc = 0;
+    cart.items.map((prod) => {
+        acc += prod.price;
+        console.log(acc);
+    });
     return(<div className="cart-container">
         <div className="cart-info">
             <p>Productos: {cart.items.length}</p>
-            <p>Precio total: </p>
+            <p>Precio total: ${acc}</p>
         </div>
     </div>);
 
