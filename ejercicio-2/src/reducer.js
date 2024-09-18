@@ -3,6 +3,7 @@ const reducer = (state, action) => {
 
     switch(action.type){
         case "ADD_PRODUCT": {
+            console.log(state);
             return({...state, items: [...state.items, action.payload]});
         }
         case "REMOVE_PRODUCT": {

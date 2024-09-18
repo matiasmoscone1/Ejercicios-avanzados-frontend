@@ -12,7 +12,7 @@ const Products = () => {
                 <li className="card-product-image">{product.image}</li>
                 <li>{product.article}</li>
                 <li>${product.price}</li>
-                <button className="btn-product" onClick={() => addProduct()}>+</button>
+                <button className="btn-product" onClick={() => addProduct(product)}>+</button>
             </ul>)
         })}
     </div>)
