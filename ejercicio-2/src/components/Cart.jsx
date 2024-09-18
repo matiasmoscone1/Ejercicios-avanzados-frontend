@@ -16,6 +16,7 @@ const Cart = () => {
             <p>Productos: {cart.items.length}</p>
             <p>Precio total: ${acc}</p>
         </div>
+        <button className="btn-view-cart">View cart</button>
     </div>);
 
 };
