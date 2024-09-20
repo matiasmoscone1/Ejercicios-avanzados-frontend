@@ -39,6 +39,7 @@ const Cart = () => {
                     return(
                         <tbody>
                             <td>{prod.article}</td>
+                            <td>{prod.brand}</td>
                             <td>{prod.price}</td>
                             <td>{prod.quantity}</td>
                         </tbody>
