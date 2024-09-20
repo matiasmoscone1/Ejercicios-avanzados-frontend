@@ -15,7 +15,11 @@ const Cart = () => {
 
     let acc = 0;
     cart.items.map((prod) => {
-        acc += prod.price;
+        if(prod.quantity > 1){
+            acc += (prod.price * prod.quantity);
+        }else{
+            acc += prod.price;
+        }
         console.log(acc);
     });
     return(<><div className="cart-container">
