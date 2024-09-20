@@ -102,6 +102,13 @@ body{
 }
 
 .modal-overlay table{
+    margin-top: 5em;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+
+.modal-overlay button{
+    cursor: pointer;
+    padding: .5em;
 }

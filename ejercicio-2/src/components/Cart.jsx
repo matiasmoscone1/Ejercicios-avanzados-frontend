@@ -30,6 +30,7 @@ const Cart = () => {
             <div className="modal-overlay">
                 <table border={1}>
                         <thead>
+                            <td>Id</td>
                             <td>Articulo</td>
                             <td>Marca</td>
                             <td>Precio</td>
@@ -38,10 +39,13 @@ const Cart = () => {
                 {cart.items.map((prod) => {
                     return(
                         <tbody>
+                            <td>{prod.id}</td>                            
                             <td>{prod.article}</td>
                             <td>{prod.brand}</td>
                             <td>{prod.price}</td>
                             <td>{prod.quantity}</td>
+                            <button>Modificar</button>                    
+                            <button>Remover</button>
                         </tbody>
                     )                    
                 })}
