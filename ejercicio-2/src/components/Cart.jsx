@@ -28,21 +28,23 @@ const Cart = () => {
     {modal && 
         <div className="modal-container">
             <div className="modal-overlay">
-                {cart.items.map((prod) => {
-                    return(
-                    <table border={1}>
+                <table border={1}>
                         <thead>
                             <td>Articulo</td>
+                            <td>Marca</td>
                             <td>Precio</td>
                             <td>Cantidad</td>
                         </thead>
+                {cart.items.map((prod) => {
+                    return(
                         <tbody>
                             <td>{prod.article}</td>
                             <td>{prod.price}</td>
                             <td>{prod.quantity}</td>
                         </tbody>
-                    </table>)
+                    )                    
                 })}
+                </table>
             </div>
         </div>}
     </>
