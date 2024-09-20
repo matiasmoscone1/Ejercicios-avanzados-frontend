@@ -5,7 +5,7 @@ import { CartContext } from "./CartContextProvider";
 
 const Cart = () => {
 
-    const { cart } = useContext(CartContext);
+    const { cart, removeProduct } = useContext(CartContext);
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => {
@@ -45,7 +45,7 @@ const Cart = () => {
                             <td>{prod.price}</td>
                             <td>{prod.quantity}</td>
                             <button>Modificar</button>                    
-                            <button>Remover</button>
+                            <button onClick={() => removeProduct(prod.id)}>Remover</button>
                         </tbody>
                     )                    
                 })}
