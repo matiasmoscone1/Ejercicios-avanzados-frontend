@@ -18,7 +18,7 @@ const reducer = (state, action) => {
             }
         }
         case "REMOVE_PRODUCT": {
-            return({...state, items: state.items.filter((item) => item.id !== action.payload)});
+            return({...state, items: state.items.filter((item) => item.id !== action.payload.id)});
         }
         case "UPDATE_QUANTITY": {
             return({...state, items: state.items.map((item) => {
