@@ -49,7 +49,7 @@ const Cart = () => {
                             <td>{prod.price}</td>
                             <td>{prod.quantity}</td>
                             <button onClick={() => updateProduct(prod)}>Modificar</button>                    
-                            <button onClick={() => removeProduct(prod.id)}>Remover</button>
+                            <button onClick={() => removeProduct(prod)}>Remover</button>
                         </tbody>
                     )                    
                 })}

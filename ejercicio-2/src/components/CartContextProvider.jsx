@@ -12,7 +12,7 @@ const CartContextProvider = ({ children }) => {
 
     const addProduct = (product) => dispatch({type:"ADD_PRODUCT", payload: product});
 
-    const removeProduct = (id) => dispatch({type:"REMOVE_PRODUCT", payload: id});
+    const removeProduct = (product) => dispatch({type:"REMOVE_PRODUCT", payload: product});
 
     const updateProduct = (product) => dispatch({type:"UPDATE_QUANTITY", payload: {id: product.id, quantity: 5}});
 
