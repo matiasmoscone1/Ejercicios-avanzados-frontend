@@ -21,14 +21,12 @@ const reducer = (state, action) => {
             return({...state, items: state.items.filter((item) => item.id !== action.payload.id)});
         }
         case "UPDATE_QUANTITY": {
-            return({...state, items: state.items.map((item) => {
-                if(item.id === action.payload.id){
-                    item.quantity = action.payload.quantity;
-                }else{
-                    item;
-                }
-            })});
+            const prodExist = state.items.find((prod) => prod.id === action.payload.id);
+            if(prodExist){
+                return {...state, items: [...state.items, {...action.payload, quantity: 5}]};
+            }
         }
+        
         case "CLEAR_CART": {
             return({...state, items: [] });
         }
