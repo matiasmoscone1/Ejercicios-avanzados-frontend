@@ -58,13 +58,17 @@ const Cart = () => {
                             
                             <button onClick={() => toggleProduct()}>Modificar</button>                    
                             <button onClick={() => removeProduct(prod)}>Remover</button>
-                            {btnProduct && <form className="form-product">
-                                <input type="number" />
-                                <button onClick={() => updateProduct(prod)}>Enviar</button>
-                                </form>}
                         </tbody>
+                        
                     )                    
                 })}
+                {btnProduct && 
+                            <div className="form-product">
+                                <form>
+                                    <input type="number" />
+                                    <button onClick={() => updateProduct(prod)}>Enviar</button>
+                                </form>
+                            </div>}
                 </table>
             </div>
         </div>}
