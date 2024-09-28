@@ -9,7 +9,7 @@ const reducer = (state, action) => {
                 return({...state, items: state.items.map((prod) => {
                     if(prod.id === action.payload.id){
                         return({...prod, quantity: prod.quantity + 1 })
-                    } else{
+                    }else{
                         return(prod);
                     }
                 })});
@@ -23,10 +23,15 @@ const reducer = (state, action) => {
         case "UPDATE_QUANTITY": {
             const prodExist = state.items.find((prod) => prod.id === action.payload.id);
             if(prodExist){
-                return {...state, items: [...state.items, {...action.payload, quantity: 5}]};
-            }
-        }
-        
+                return({...state, items: state.items.map((prod) => {
+                    if(prod.id === action.payload.id){
+                        return({...prod, quantity: prod.quantity + 5})
+                    }else{
+                        return(prod);
+                    }
+                })});
+            
+        }}
         case "CLEAR_CART": {
             return({...state, items: [] });
         }
