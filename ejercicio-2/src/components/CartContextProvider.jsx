@@ -14,8 +14,6 @@ const CartContextProvider = ({ children }) => {
 
     const removeProduct = (product) => dispatch({type:"REMOVE_PRODUCT", payload: product});
 
-    //const updateProduct = (product) => dispatch({type:"UPDATE_QUANTITY", payload: {id: product.id, quantity: 5}});
-
     const updateProduct = (product, cant) => dispatch({type:"UPDATE_QUANTITY", payload: {product, quantity: cant}});
 
     return(<CartContext.Provider value={{ cart, addProduct, removeProduct, updateProduct }}>

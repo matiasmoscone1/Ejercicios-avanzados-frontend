@@ -28,7 +28,6 @@ const Cart = () => {
         }else{
             acc += prod.price;
         }
-        console.log(acc);
     });
     return(<><div className="cart-container">
         <div className="cart-info">
@@ -54,10 +53,8 @@ const Cart = () => {
                             <td>{prod.id}</td>                            
                             <td>{prod.article}</td>
                             <td>{prod.brand}</td>
-                            <td>{prod.price}</td>
+                            <td>${prod.price}</td>
                             <td>{prod.quantity}</td>
-                            { /*<button onClick={() => updateProduct(prod)}>Modificar</button>*/ }
-                            
                             <button onClick={() => toggleProduct(prod)}>Modificar</button>                    
                             <button onClick={() => removeProduct(prod)}>Remover</button>
                         </tbody>
@@ -65,11 +62,10 @@ const Cart = () => {
                 })}
                 </table>
                 {btnProduct && 
-                            <div className="form-product">
-                                <input type="number" onChange={(e) => setCant(e.target.value)}/>
-                                {console.log(cant)}
-                                <button onClick={() => updateProduct(item, cant)}>Enviar</button> 
-                            </div>}
+                    <div className="form-product">
+                        <input type="number" value={cant} onChange={(e) => setCant(e.target.value)}/>
+                        <button onClick={() => {updateProduct(item, cant); setCant("")}}>Añadir</button> 
+                    </div>}
             </div>
         </div>}
     </>
