@@ -21,11 +21,11 @@ const reducer = (state, action) => {
             return({...state, items: state.items.filter((item) => item.id !== action.payload.id)});
         }
         case "UPDATE_QUANTITY": {
-            const prodExist = state.items.find((prod) => prod.id === action.payload.id);
+            const prodExist = state.items.find((prod) => prod.id === action.payload.product.id);
             if(prodExist){
                 return({...state, items: state.items.map((prod) => {
-                    if(prod.id === action.payload.id){
-                        return({...prod, quantity: prod.quantity + 5})
+                    if(prod.id === action.payload.product.id){
+                        return({...prod, quantity: action.payload.quantity});                   
                     }else{
                         return(prod);
                     }

@@ -9,6 +9,7 @@ const Cart = () => {
     const [modal, setModal] = useState(false);
     const [btnProduct, setBtnProduct] = useState(false);
     const [item, setItem] = useState({});
+    const [cant, setCant] = useState(0);
 
     const toggleModal = () => {
         setModal(!modal);
@@ -65,8 +66,9 @@ const Cart = () => {
                 </table>
                 {btnProduct && 
                             <div className="form-product">
-                                <input type="number" />
-                                <button onClick={() => updateProduct(item)}>Enviar</button> 
+                                <input type="number" onChange={(e) => setCant(e.target.value)}/>
+                                {console.log(cant)}
+                                <button onClick={() => updateProduct(item, cant)}>Enviar</button> 
                             </div>}
             </div>
         </div>}
