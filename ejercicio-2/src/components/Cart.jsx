@@ -7,9 +7,15 @@ const Cart = () => {
 
     const { cart, removeProduct, updateProduct } = useContext(CartContext);
     const [modal, setModal] = useState(false);
+    const [btnProduct, setBtnProduct] = useState(false);
+
 
     const toggleModal = () => {
         setModal(!modal);
+    }
+
+    const toggleProduct = () => {
+        setBtnProduct(!btnProduct);
     }
 
 
@@ -48,8 +54,14 @@ const Cart = () => {
                             <td>{prod.brand}</td>
                             <td>{prod.price}</td>
                             <td>{prod.quantity}</td>
-                            <button onClick={() => updateProduct(prod)}>Modificar</button>                    
+                            { /*<button onClick={() => updateProduct(prod)}>Modificar</button>*/ }
+                            
+                            <button onClick={() => toggleProduct()}>Modificar</button>                    
                             <button onClick={() => removeProduct(prod)}>Remover</button>
+                            {btnProduct && <form className="form-product">
+                                <input type="number" />
+                                <button onClick={() => updateProduct(prod)}>Enviar</button>
+                                </form>}
                         </tbody>
                     )                    
                 })}
