@@ -36,7 +36,6 @@ const reducer = (state, action) => {
             return({...state, items: [] });
         }
     }
-
 }
 
 export default reducer;

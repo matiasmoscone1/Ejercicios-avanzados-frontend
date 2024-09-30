@@ -5,21 +5,13 @@ import { CartContext } from "./CartContextProvider";
 
 const Cart = () => {
 
-    const { cart, removeProduct, updateProduct } = useContext(CartContext);
+    const { cart, removeProduct, updateProduct, item, toggleProduct, btnProduct } = useContext(CartContext);
     const [modal, setModal] = useState(false);
-    const [btnProduct, setBtnProduct] = useState(false);
-    const [item, setItem] = useState({});
     const [cant, setCant] = useState(0);
 
     const toggleModal = () => {
         setModal(!modal);
     }
-
-    const toggleProduct = (prod) => {
-        setBtnProduct(!btnProduct);
-        setItem(prod);
-    }
-
 
     let acc = 0;
     cart.items.map((prod) => {
