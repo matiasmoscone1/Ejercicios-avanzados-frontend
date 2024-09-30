@@ -30,7 +30,6 @@ export const reducer = (state, action) => {
                         return(prod);
                     }
                 })});
-            
         }}
         case "CLEAR_CART": {
             return({...state, items: [] });

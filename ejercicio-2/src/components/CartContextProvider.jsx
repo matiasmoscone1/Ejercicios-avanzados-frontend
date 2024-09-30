@@ -21,12 +21,16 @@ const CartContextProvider = ({ children }) => {
 
     const updateProduct = (product, cant) => dispatch({type:"UPDATE_QUANTITY", payload: {product, quantity: cant}});
 
+    const toggleModal = () => dispatch_2({type: "TOGGLE_MODAL"});
+
+    const setCant = (num) => dispatch_2({type: "SET_CANT", payload: num});
+
     const toggleProduct = (prod) => {
         setBtnProduct(!btnProduct);
         setItem(prod);
     }
 
-    return(<CartContext.Provider value={{ cart, addProduct, removeProduct, updateProduct, item, toggleProduct, btnProduct }}>
+    return(<CartContext.Provider value={{ cart, addProduct, removeProduct, updateProduct, item, toggleProduct, btnProduct, toggleModal, state, setCant }}>
         { children }
     </CartContext.Provider>);
 

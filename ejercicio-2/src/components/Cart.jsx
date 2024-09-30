@@ -5,13 +5,7 @@ import { CartContext } from "./CartContextProvider";
 
 const Cart = () => {
 
-    const { cart, removeProduct, updateProduct, item, toggleProduct, btnProduct } = useContext(CartContext);
-    const [modal, setModal] = useState(false);
-    const [cant, setCant] = useState(0);
-
-    const toggleModal = () => {
-        setModal(!modal);
-    }
+    const { cart, removeProduct, updateProduct, item, toggleProduct, btnProduct, toggleModal, state, setCant } = useContext(CartContext);
 
     let acc = 0;
     cart.items.map((prod) => {
@@ -28,7 +22,7 @@ const Cart = () => {
         </div>
         <button className="btn-view-cart" onClick={() => toggleModal()}>View cart</button>
     </div>
-    {modal && 
+    {state.modal && 
         <div className="modal-container">
             <div className="modal-overlay">
                 <table border={1}>
@@ -55,8 +49,8 @@ const Cart = () => {
                 </table>
                 {btnProduct && 
                     <div className="form-product">
-                        <input type="number" value={cant} onChange={(e) => setCant(e.target.value)}/>
-                        <button onClick={() => {updateProduct(item, cant); setCant("")}}>Añadir</button> 
+                        <input type="number" value={state.cant} onChange={(e) => setCant(e.target.value)}/>
+                        <button onClick={() => {updateProduct(item, state.cant); setCant("")}}>Añadir</button> 
                     </div>}
             </div>
         </div>}
