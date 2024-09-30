@@ -1,5 +1,5 @@
 
-const reducer = (state, action) => {
+export const reducer = (state, action) => {
 
     switch(action.type){
         case "ADD_PRODUCT": {
@@ -38,4 +38,14 @@ const reducer = (state, action) => {
     }
 }
 
-export default reducer;
+export const reducer_2 = (state, action) => {
+    switch(action.type){
+        case "TOGGLE_MODAL":{
+            return({...state, modal: !state.modal});
+        }
+        case "SET_CANT":{
+            return({...state, cant: action.payload});
+        }
+    }
+};
+
