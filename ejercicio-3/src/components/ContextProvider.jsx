@@ -40,6 +40,7 @@ const ContextProvider = ({ children }) => {
         phone: ""});
     }
 
+    const deleteUser = (id) => dispatch({type: "DELETE_USER", payload: id});
 
     const fetchUsers = async () => {
         const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -53,7 +54,8 @@ const ContextProvider = ({ children }) => {
     
 
 
-    return(<ContextUsers.Provider value={{ users, flag, setFlag, handleInput, inputValue, handleSubmit }}>
+    return(<ContextUsers.Provider value={{ users, flag, setFlag, handleInput, inputValue, 
+    handleSubmit, deleteUser }}>
         { children }
     </ContextUsers.Provider>);
 

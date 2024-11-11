@@ -5,7 +5,7 @@ import EditComponent from "./EditComponent";
 
 const ComponentUsers = () => {
 
-    const { users, flag, setFlag } = useContext(ContextUsers);
+    const { users, flag, setFlag, deleteUser } = useContext(ContextUsers);
 
     console.log(users);
 
@@ -34,7 +34,7 @@ const ComponentUsers = () => {
                             <td>{user.email}</td>
                             <td>{user.phone}</td>
                             <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
+                            <td><button onClick={() => deleteUser(user.id)}>Delete</button></td>
                         </tr>)
                     })}
                 </tbody>

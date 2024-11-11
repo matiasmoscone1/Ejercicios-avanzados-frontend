@@ -8,6 +8,9 @@ const reducer = (state, action) => {
         case "CREATE_USER":
             const newArray = [...state.array, action.payload];
             return({...state, array: newArray});
+        case "DELETE_USER":
+            const filterArray = state.array.filter((user) => user.id !== action.payload);
+            return({...state, array: filterArray});
                 
     }
 
