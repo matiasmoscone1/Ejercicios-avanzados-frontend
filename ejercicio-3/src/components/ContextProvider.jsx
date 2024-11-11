@@ -11,9 +11,34 @@ const ContextProvider = ({ children }) => {
         array: []
     };
 
+    const [inputValue, setInputValue] = useState({
+        id: "",
+        name: "",
+        username: "",
+        email: "",
+        phone: ""
+    });
+
     const [users, dispatch] = useReducer(reducer, initialState);
     
     const [flag, setFlag] = useState(false);
+
+
+    const handleInput = (e) => {
+        const { name, value } = e.target;
+        setInputValue({...inputValue, [name]:value});
+    }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch({type: "CREATE_USER", payload: inputValue});
+        setFlag(false);
+        setInputValue({id: "",
+        name: "",
+        username: "",
+        email: "",
+        phone: ""});
+    }
 
 
     const fetchUsers = async () => {
@@ -28,7 +53,7 @@ const ContextProvider = ({ children }) => {
     
 
 
-    return(<ContextUsers.Provider value={{ users, flag, setFlag }}>
+    return(<ContextUsers.Provider value={{ users, flag, setFlag, handleInput, inputValue, handleSubmit }}>
         { children }
     </ContextUsers.Provider>);
 
