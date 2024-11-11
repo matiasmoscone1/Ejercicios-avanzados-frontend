@@ -1,3 +1,40 @@
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    button{
+        cursor: pointer;
+    }
+}
 
 
+.table-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    table{
+        margin-top: 1em;
+        border-collapse: collapse;
+        thead{
+            font-weight: 600;
+            text-align: center;
+        }
+        td{
+            padding: .2em;
+        }
+    }
+}
+
+.create-container{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        width: 10em;
+        height: 2em;
+    }
+}

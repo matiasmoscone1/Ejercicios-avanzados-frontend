@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react"
 import reducer from "../reducers/reducer";
 
@@ -12,7 +12,8 @@ const ContextProvider = ({ children }) => {
     };
 
     const [users, dispatch] = useReducer(reducer, initialState);
-
+    
+    const [flag, setFlag] = useState(false);
 
 
     const fetchUsers = async () => {
@@ -21,10 +22,13 @@ const ContextProvider = ({ children }) => {
         dispatch({type: "READ_USERS", payload: data});
     }
 
+    useEffect(() => {
+        fetchUsers();
+    }, []);
     
 
 
-    return(<ContextUsers.Provider value={{ users, fetchUsers }}>
+    return(<ContextUsers.Provider value={{ users, flag, setFlag }}>
         { children }
     </ContextUsers.Provider>);
 

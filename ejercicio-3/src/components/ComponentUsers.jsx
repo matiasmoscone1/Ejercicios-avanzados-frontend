@@ -1,20 +1,45 @@
 import { useContext } from "react";
 import "../index.scss";
 import { ContextUsers } from "../components/ContextProvider";
-import { useEffect } from "react";
+import EditComponent from "./EditComponent";
 
 const ComponentUsers = () => {
 
-    const { users, fetchUsers } = useContext(ContextUsers);
+    const { users, flag, setFlag } = useContext(ContextUsers);
 
-    useEffect(() => {
-        fetchUsers();
-    }, [users]);
     console.log(users);
 
     return(<>
-
-        <h2>asd</h2>
+        {flag && <EditComponent />}
+        <div className="create-container">
+            <button onClick={() => setFlag(true)}>Create User</button>
+        </div>
+        <div className="table-container">
+            <table border={1}>
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Username</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users.array.map((user) => {
+                        return(<tr key={user.id}>
+                            <td>{user.id}</td>
+                            <td>{user.name}</td>
+                            <td>{user.username}</td>
+                            <td>{user.email}</td>
+                            <td>{user.phone}</td>
+                            <td><button>Edit</button></td>
+                            <td><button>Delete</button></td>
+                        </tr>)
+                    })}
+                </tbody>
+            </table>
+        </div>
     </>)
 
 }
