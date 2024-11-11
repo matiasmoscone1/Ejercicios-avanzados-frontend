@@ -2,15 +2,19 @@ import { useContext } from "react";
 import "../index.scss";
 import { ContextUsers } from "../components/ContextProvider";
 import EditComponent from "./EditComponent";
+import NewEditComponent from "./NewEditComponent";
 
 const ComponentUsers = () => {
 
-    const { users, flag, setFlag, deleteUser } = useContext(ContextUsers);
+    const { users, flag, setFlag, flagEdit, setFlagEdit, deleteUser, inputValue, updateUser, setInputValue } = useContext(ContextUsers);
 
     console.log(users);
 
+    console.log(inputValue);
+
     return(<>
         {flag && <EditComponent />}
+        {flagEdit && <NewEditComponent />}
         <div className="create-container">
             <button onClick={() => setFlag(true)}>Create User</button>
         </div>
@@ -33,7 +37,7 @@ const ComponentUsers = () => {
                             <td>{user.username}</td>
                             <td>{user.email}</td>
                             <td>{user.phone}</td>
-                            <td><button>Edit</button></td>
+                            <td><button onClick={() => {setInputValue({id: user.id, name: user.name, username: user.username, email: user.email, phone: user.phone }); setFlagEdit(true)}}>Edit</button></td>
                             <td><button onClick={() => deleteUser(user.id)}>Delete</button></td>
                         </tr>)
                     })}

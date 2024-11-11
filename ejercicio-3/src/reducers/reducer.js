@@ -11,7 +11,9 @@ const reducer = (state, action) => {
         case "DELETE_USER":
             const filterArray = state.array.filter((user) => user.id !== action.payload);
             return({...state, array: filterArray});
-                
+        case "UPDATE_USER":
+            return({...state, array: state.array.map((user) => 
+                user.id === action.payload.id ? action.payload : user)});
     }
 
 }

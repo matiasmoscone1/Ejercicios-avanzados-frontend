@@ -6,7 +6,7 @@ const EditComponent = () => {
 
     const { handleSubmit, handleInput } = useContext(ContextUsers);
 
-  
+
     return(<div className="popup-create">
         <form onSubmit={(e) => handleSubmit(e)}>
             <label>Id</label>

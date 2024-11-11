@@ -22,6 +22,7 @@ const ContextProvider = ({ children }) => {
     const [users, dispatch] = useReducer(reducer, initialState);
     
     const [flag, setFlag] = useState(false);
+    const [flagEdit, setFlagEdit] = useState(false);
 
 
     const handleInput = (e) => {
@@ -40,7 +41,20 @@ const ContextProvider = ({ children }) => {
         phone: ""});
     }
 
+    const handleSubmitNew = (e) => {
+        e.preventDefault();
+        updateUser(inputValue);
+        setFlagEdit(false);
+        setInputValue({id: "",
+        name: "",
+        username: "",
+        email: "",
+        phone: ""});
+    }
+
     const deleteUser = (id) => dispatch({type: "DELETE_USER", payload: id});
+
+    const updateUser = (obj) => dispatch({type: "UPDATE_USER", payload: obj});
 
     const fetchUsers = async () => {
         const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -55,7 +69,7 @@ const ContextProvider = ({ children }) => {
 
 
     return(<ContextUsers.Provider value={{ users, flag, setFlag, handleInput, inputValue, 
-    handleSubmit, deleteUser }}>
+    handleSubmit, deleteUser, updateUser, handleSubmitNew, flagEdit, setFlagEdit, setInputValue }}>
         { children }
     </ContextUsers.Provider>);
 
