@@ -58,3 +58,32 @@
         align-items: center;
     }
 }
+
+
+@for $i from 1 to 6 {
+    .p-#{$i}{
+      padding: #{$i * 1}em;  
+    } 
+}
+
+$primary-color: black;
+
+@mixin button-style {
+    width: 13em;
+    height: 2em;
+    margin-top: 1em;
+    background-color: $primary-color;
+    color: antiquewhite;
+    &:hover{
+        background-color: red;
+        color: yellow;
+    }
+}
+
+
+.popup-create{
+    button{
+        @include button-style();
+    }
+}
+
