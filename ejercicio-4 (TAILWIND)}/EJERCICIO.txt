@@ -1,0 +1,43 @@
+			
+			Enunciado del Ejercicio: Gestor de Tareas Colaborativo
+
+Objetivo: Construir una aplicación de gestión de tareas colaborativas, donde varios usuarios (simulados) pueden ver, agregar, completar y filtrar tareas. Utilizarás useContext para manejar el estado global del usuario actual y de las tareas. Además, deberás usar una librería de diseño para estilizar el proyecto de forma profesional.
+
+Requisitos Funcionales:
+	El usuario debe poder:
+
+	Iniciar sesión (ficticio, seleccionando su nombre de una lista de usuarios simulados).
+
+	Ver una lista de tareas propias y de otros usuarios.
+
+	Filtrar tareas por usuario, estado (pendiente, completada), y fecha.
+
+	Marcar tareas como completadas.
+
+	Crear una nueva tarea con título, descripción, fecha y asignarla a un usuario.
+
+Requisitos Técnicos:
+	Usa useContext para manejar el contexto de:
+
+	Usuario actual.
+
+	Lista global de tareas.
+
+	Usa useReducer para manejar el estado de las tareas.
+
+	Usa useEffect para simular carga de datos desde un "servidor" (mock JSON o setTimeout).
+
+	Usa useMemo para mejorar rendimiento al filtrar tareas.
+
+	Usa una librería de diseño visual como:
+
+	Tailwind CSS (más flexible y personalizable).
+
+	Descompón tu app en componentes reutilizables:
+
+	TaskList, TaskForm, TaskFilter, UserSelector, Header, etc.
+
+Bonus:
+	Agrega persistencia local con localStorage.
+
+	Agrega animaciones suaves (con framer-motion, opcional).
