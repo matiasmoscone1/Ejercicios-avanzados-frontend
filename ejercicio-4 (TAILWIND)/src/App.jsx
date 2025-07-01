@@ -1,12 +1,18 @@
 import Login from "./components/Login"
 import TaskContextProvider from "./context/TaskContext"
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   
   return (
     <>
       <TaskContextProvider>
-        <Login />
+
+        <Routes>
+          <Route path="/" element={<Login />}/>
+          <Route path="/dashboard" />
+
+        </Routes>
 
       </TaskContextProvider>
 
