@@ -5,7 +5,7 @@ import { TaskContext } from "../context/TaskContext";
 
 const Login = () => {
 
-    const { state, users } = useContext(TaskContext);
+    const { state, users, dispatch } = useContext(TaskContext);
     const [userLog, setUserLog] = useState({});
 
     const handleUser = (e) => {
@@ -14,12 +14,12 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(userLog.user.match(users.username)){
-            console.log(users.username);
-        }    
+        users.map((user) => {
+            if(user.username === userLog.user && user.password === userLog.pass){
+                dispatch({type: "SAVE_USER", payload: userLog});
+            }
+        });
     }
-
-    console.log(userLog);
 
     return(<>
     <div className="w-screen h-screen flex justify-center items-center">
