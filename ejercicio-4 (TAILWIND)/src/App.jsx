@@ -1,6 +1,7 @@
 import Login from "./components/Login"
 import TaskContextProvider from "./context/TaskContext"
 import { Routes, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   
@@ -10,7 +11,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Login />}/>
-          <Route path="/dashboard" />
+          <Route path="/dashboard" element={<Dashboard />}/>
 
         </Routes>
 

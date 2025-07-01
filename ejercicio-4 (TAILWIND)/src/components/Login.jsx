@@ -8,6 +8,8 @@ const Login = () => {
     const { state, users, dispatch } = useContext(TaskContext);
     const [userLog, setUserLog] = useState({});
 
+    const navigate = useNavigate();
+
     const handleUser = (e) => {
         setUserLog({...userLog, [e.target.name]: e.target.value});
     }
@@ -17,9 +19,11 @@ const Login = () => {
         users.map((user) => {
             if(user.username === userLog.user && user.password === userLog.pass){
                 dispatch({type: "SAVE_USER", payload: userLog});
+                navigate("/dashboard");
             }
         });
     }
+
 
     return(<>
     <div className="w-screen h-screen flex justify-center items-center">
@@ -31,7 +35,9 @@ const Login = () => {
                     <input className="text-center border p-2 rounded-md" name="pass" placeholder="Contraseña" type="password" required onChange={(e) => handleUser(e)}/>
                 </div>
                 <div className="flex flex-col w-md">
-                    <button className="p-2 rounded-md text-lg font-semibold text-white hover:text-black cursor-pointer bg-slate-500 hover:bg-slate-400">Iniciar sesión</button>
+                    <Link to={"/dashboard"} className="p-2 rounded-md text-lg font-semibold text-white hover:text-black cursor-pointer bg-slate-500 hover:bg-slate-400 text-center">
+                        <button className="cursor-pointer" type="submit">Iniciar sesión</button>
+                    </Link>
                 </div>
             </div>
         </form>
