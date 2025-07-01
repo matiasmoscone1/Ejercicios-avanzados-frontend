@@ -16,12 +16,16 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        users.map((user) => {
-            if(user.username === userLog.user && user.password === userLog.pass){
-                dispatch({type: "SAVE_USER", payload: userLog});
-                navigate("/dashboard");
-            }
-        });
+
+        const userFound = users.find((user) => (user.username === userLog.user && user.password === userLog.pass));
+        
+        if(userFound){
+            dispatch({type: "SAVE_USER", payload: userLog});
+            navigate("/dashboard");
+        }else{
+            console.log("Usuario o contraseña incorrecto.");
+        }
+
     }
 
 
@@ -35,9 +39,7 @@ const Login = () => {
                     <input className="text-center border p-2 rounded-md" name="pass" placeholder="Contraseña" type="password" required onChange={(e) => handleUser(e)}/>
                 </div>
                 <div className="flex flex-col w-md">
-                    <Link to={"/dashboard"} className="p-2 rounded-md text-lg font-semibold text-white hover:text-black cursor-pointer bg-slate-500 hover:bg-slate-400 text-center">
-                        <button className="cursor-pointer" type="submit">Iniciar sesión</button>
-                    </Link>
+                    <button className="p-2 rounded-md text-lg font-semibold text-white hover:text-black cursor-pointer bg-slate-500 hover:bg-slate-400 text-center" type="submit">Iniciar sesión</button>
                 </div>
             </div>
         </form>
