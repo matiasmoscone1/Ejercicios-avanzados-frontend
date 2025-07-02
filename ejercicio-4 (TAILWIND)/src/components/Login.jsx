@@ -31,7 +31,7 @@ const Login = () => {
     }
 
 
-    return(<>
+    return(
     <div className="w-screen h-screen flex justify-center items-center">
         <form onSubmit={(e) => handleSubmit(e)}>
             <div className="h-[300px] w-xl flex flex-col justify-center items-center
@@ -50,8 +50,7 @@ const Login = () => {
                 : <></>}
             </div>
         </form>
-    </div>
-    </>)
+    </div>)
 
 }
 

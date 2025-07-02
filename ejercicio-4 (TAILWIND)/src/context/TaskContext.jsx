@@ -6,8 +6,8 @@ export const TaskContext = createContext();
 
 const TaskContextProvider = ({ children }) => {
 
-    const users = [{username: "matias", password: "1234"}, {username: "userprueba", 
-    password: "hola123"}, {username: "userprueba2", password: "hola1234"}];
+    const users = [{username: "matias", password: "hola1234"}, {username: "userprueba", 
+    password: "asd1234"}, {username: "userprueba2", password: "asdasdasd"}];
 
     const initialState = {
         userLogged: null,
