@@ -1,6 +1,8 @@
 import { useReducer } from "react";
+import { useEffect } from "react";
 import { createContext } from "react"
 import reducer from "../reducer/reducer";
+import taskData from "../data/database.json";
 
 export const TaskContext = createContext();
 
@@ -10,11 +12,16 @@ const TaskContextProvider = ({ children }) => {
     password: "asd1234"}, {username: "userprueba2", password: "asdasdasd"}];
 
     const initialState = {
+        tasks: null,
         userLogged: null,
 
     }
 
     const [state, dispatch] = useReducer(reducer, initialState);
+
+    useEffect(() => {
+        dispatch({type: "SAVE_TASKS", payload: taskData});
+    }, []);
 
     console.log(state);
 

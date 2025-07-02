@@ -5,6 +5,9 @@ const reducer = (state, action) => {
         case "SAVE_USER": {
             return({...state, userLogged: action.payload});
         }
+        case "SAVE_TASKS": {
+            return({...state, tasks: action.payload});
+        }
     }
 }
 
