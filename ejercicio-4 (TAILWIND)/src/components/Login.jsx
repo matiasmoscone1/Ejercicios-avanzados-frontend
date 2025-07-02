@@ -7,6 +7,7 @@ const Login = () => {
 
     const { state, users, dispatch } = useContext(TaskContext);
     const [userLog, setUserLog] = useState({});
+    const [flag, setFlag] = useState(false);
 
     const navigate = useNavigate();
 
@@ -21,11 +22,12 @@ const Login = () => {
         
         if(userFound){
             dispatch({type: "SAVE_USER", payload: userLog});
+            setFlag(false);
             navigate("/dashboard");
         }else{
             console.log("Usuario o contraseña incorrecto.");
+            setFlag(true);
         }
-
     }
 
 
@@ -41,6 +43,11 @@ const Login = () => {
                 <div className="flex flex-col w-md">
                     <button className="p-2 rounded-md text-lg font-semibold text-white hover:text-black cursor-pointer bg-slate-500 hover:bg-slate-400 text-center" type="submit">Iniciar sesión</button>
                 </div>
+                {flag ? 
+                    <p className="text-red-500 font-semibold">
+                        Usuario o contraseña incorrectos...                        
+                    </p>
+                : <></>}
             </div>
         </form>
     </div>
