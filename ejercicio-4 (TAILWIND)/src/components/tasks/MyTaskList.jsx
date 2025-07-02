@@ -13,12 +13,11 @@ const MyTaskList = () => {
         setFilterArray(state.tasks.filter((task) => task.user === state.userLogged.user));        
     }, []);
 
-
     console.log(state);
     console.log(filterArray);
 
-    return(<div className="w-xl h-96 border p-4">
-        <span className="text-lg block text-center font-semibold ">Mis tareas</span>
+    return(<div className="w-full h-96 border p-4">
+        <span className="text-lg block text-center font-semibold">Mis tareas</span>
         <div>
             {filterArray.map((task) => {
                 return(<div key={task.id}>

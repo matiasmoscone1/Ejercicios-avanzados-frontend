@@ -14,7 +14,7 @@ const Dashboard = () => {
             <div className="p-2 m-10 border">
                 filtros
             </div>
-            <div className="p-4 m-10 grid grid-cols-2 grid-rows-1 border gap-2">
+            <div className="p-4 m-10 grid grid-cols-1 md:grid-cols-2 grid-rows-1 border gap-2">
                 <MyTaskList />
                 <GlobalTaskList />
             </div>
