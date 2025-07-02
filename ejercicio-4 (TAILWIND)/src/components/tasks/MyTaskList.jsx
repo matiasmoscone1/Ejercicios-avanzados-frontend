@@ -13,17 +13,14 @@ const MyTaskList = () => {
         setFilterArray(state.tasks.filter((task) => task.user === state.userLogged.user));        
     }, []);
 
-    console.log(state);
-    console.log(filterArray);
-
-    return(<div className="w-full h-96 border p-4">
+    return(<div className="w-full max-h-[75vh] border p-4">
         <span className="text-lg block text-center font-semibold">Mis tareas</span>
         <div>
             {filterArray.map((task) => {
                 return(<div key={task.id} className="p-2 flex justify-center items-center gap-2 border-b">
                     <span>{task.user}</span>
-                    <span>{task.title}</span>
-                    <span>{task.description}</span>
+                    <span className="text-sm w-40 truncate" title={task.title}>{task.title}</span>
+                    <span className="text-sm w-80 truncate" title={task.description}>{task.description}</span>
                     <span>{task.date}</span>
                     <span>{task.state === "pendiente" ? <input type="checkbox" /> : <input type="checkbox" checked/> }</span>
                 
