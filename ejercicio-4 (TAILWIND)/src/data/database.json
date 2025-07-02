@@ -27,7 +27,7 @@
         "id": 4,
         "title": "Diseñar landing page",
         "description": "Crear el diseño inicial de la nueva landing page para marketing.",
-        "user": "franco_gomez",
+        "user": "matias",
         "state": "completada",
         "date": "25/01/2025"
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "title": "Optimizar base de datos",
         "description": "Revisar índices y optimizar consultas lentas.",
-        "user": "marcos_t",
+        "user": "matias",
         "state": "completada",
         "date": "08/02/2025"
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "title": "Redactar artículo técnico",
         "description": "Escribir un blog post sobre rendimiento en React.",
-        "user": "anagomez",
+        "user": "matias",
         "state": "pendiente",
         "date": "27/06/2025"
     },
