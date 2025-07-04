@@ -19,9 +19,9 @@ const Dashboard = () => {
                 <MyTaskList />
                 <GlobalTaskList />
             </div>
-            <div>
+            
                 <AddTask />
-            </div>
+            
         </div>
     </div>)
 
