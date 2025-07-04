@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { TaskContext } from "../context/TaskContext";
 import MyTaskList from "./tasks/MyTaskList";
 import GlobalTaskList from "./tasks/GlobalTaskList";
+import AddTask from "./tasks/AddTask";
 
 const Dashboard = () => {
 
@@ -17,6 +18,9 @@ const Dashboard = () => {
             <div className="p-2 mt-10 grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-2">
                 <MyTaskList />
                 <GlobalTaskList />
+            </div>
+            <div>
+                <AddTask />
             </div>
         </div>
     </div>)
