@@ -8,6 +8,9 @@ const reducer = (state, action) => {
         case "SAVE_TASKS": {
             return({...state, tasks: action.payload});
         }
+        case "TOGGLE_ADD_TASK_FLAG": {
+            return({...state, flagTask: action.payload});
+        }
     }
 }
 

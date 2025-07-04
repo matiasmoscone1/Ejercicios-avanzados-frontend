@@ -14,7 +14,8 @@ const TaskContextProvider = ({ children }) => {
     const initialState = {
         tasks: null,
         userLogged: null,
-
+        flagTask: false,
+        
     }
 
     const [state, dispatch] = useReducer(reducer, initialState);

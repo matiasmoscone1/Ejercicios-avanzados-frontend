@@ -8,7 +8,11 @@ const GlobalTaskList = () => {
 
 
     return(<div className="w-full max-h-[75vh] overflow-y-auto border p-4">
-        <span className="text-lg block text-center font-semibold">Todas las tareas</span>
+        <div className="flex justify-between items-center">
+            <span className="text-lg block text-center font-semibold w-full">Todas las tareas</span>
+            <button className="mr-4 font-semibold text-3xl cursor-pointer transition-transform duration-300 
+            hover:scale-150" title="Agregar tarea" onClick={() => dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: true})}>+</button>
+        </div>
         <div>
             {state.tasks.map((task) => {
                 return(<div key={task.id} className="p-2 flex justify-center items-center gap-2 border-b">
