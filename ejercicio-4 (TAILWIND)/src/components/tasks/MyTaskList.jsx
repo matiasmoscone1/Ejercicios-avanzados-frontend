@@ -14,7 +14,10 @@ const MyTaskList = () => {
     }, []);
 
     return(<div className="w-full max-h-[75vh] border p-4">
-        <span className="text-lg block text-center font-semibold">Mis tareas</span>
+        <div className="flex justify-between items-center">
+            <span className="text-lg block text-center font-semibold w-full">Mis tareas</span>
+            <button className="mr-4 text-3xl" title="Agregar tarea">+</button>
+        </div>
         <div>
             {filterArray.map((task) => {
                 return(<div key={task.id} className="p-2 flex justify-center items-center gap-2 border-b">
