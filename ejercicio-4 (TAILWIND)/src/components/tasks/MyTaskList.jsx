@@ -6,7 +6,7 @@ import { TaskContext } from "../../context/TaskContext";
 
 const MyTaskList = () => {
 
-    const { state } = useContext(TaskContext);    
+    const { state, dispatch } = useContext(TaskContext);    
     const [filterArray, setFilterArray] = useState([]);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const MyTaskList = () => {
         <div className="flex justify-between items-center">
             <span className="text-lg block text-center font-semibold w-full">Mis tareas</span>
             <button className="mr-4 font-semibold text-3xl cursor-pointer transition-transform duration-300 
-            hover:scale-150" title="Agregar tarea" onClick={() => dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: true})}>+</button>
+            hover:scale-150" title="Agregar tarea" onClick={() => dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: !state.flagTask})}>+</button>
         </div>
         <div>
             {filterArray.map((task) => {

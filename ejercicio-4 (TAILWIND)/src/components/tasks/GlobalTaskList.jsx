@@ -3,14 +3,14 @@ import { TaskContext } from "../../context/TaskContext";
 
 const GlobalTaskList = () => {
 
-    const { state } = useContext(TaskContext);
+    const { state, dispatch } = useContext(TaskContext);
 
 
     return(<div className="w-full max-h-[75vh] overflow-y-auto border p-4">
         <div className="flex justify-between items-center">
             <span className="text-lg block text-center font-semibold w-full">Todas las tareas</span>
             <button className="mr-4 font-semibold text-3xl cursor-pointer transition-transform duration-300 
-            hover:scale-150" title="Agregar tarea" onClick={() => dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: true})}>+</button>
+            hover:scale-150" title="Agregar tarea" onClick={() => dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: !state.flagTask})}>+</button>
         </div>
         <div>
             {state.tasks.map((task) => {

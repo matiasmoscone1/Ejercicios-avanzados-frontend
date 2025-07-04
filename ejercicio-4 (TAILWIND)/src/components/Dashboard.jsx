@@ -20,7 +20,8 @@ const Dashboard = () => {
                 <GlobalTaskList />
             </div>
             
-                <AddTask />
+            {state.flagTask ? <AddTask /> : <></>}
+
             
         </div>
     </div>)
