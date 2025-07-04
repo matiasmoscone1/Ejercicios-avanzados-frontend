@@ -16,7 +16,7 @@ const MyTaskList = () => {
     return(<div className="w-full max-h-[75vh] border p-4">
         <div className="flex justify-between items-center">
             <span className="text-lg block text-center font-semibold w-full">Mis tareas</span>
-            <button className="mr-4 text-3xl" title="Agregar tarea">+</button>
+            <button className="mr-4 font-semibold text-3xl cursor-pointer transition-transform duration-300 hover:scale-150" title="Agregar tarea">+</button>
         </div>
         <div>
             {filterArray.map((task) => {
