@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { TaskContext } from "../../context/TaskContext";
 
@@ -9,6 +10,15 @@ const AddTask = () => {
     const { state, dispatch } = useContext(TaskContext);
     const popUpRef = useRef();
     const closeBtnRef = useRef();
+    const [newTask, setNewTask] = useState(
+        {
+            id: null,
+            title: "",
+            description: "",
+            user: state.userLogged.user,
+            state: "pendiente",
+            date: "",
+    });
 
     console.log(state);
 
@@ -17,7 +27,15 @@ const AddTask = () => {
             dispatch({type: "CLOSE_POPUP", payload: false});
         }
     }
-    
+
+    const handleNewTask = (e) => {
+        setNewTask({...newTask, [e.target.name]:e.target.value});
+    }
+
+    const addTask = () => {
+        dispatch({type: "ADD_TASK", payload: newTask});
+    }
+
     return(<>
         {state.flagTask.flag && (
         <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50" onClick={(e) => closePopUp(e)}>
@@ -26,13 +44,13 @@ const AddTask = () => {
                 {state.flagTask.task === "myTask" 
                 ? <div className="flex flex-col justify-center items-center gap-8">
                     <span className="font-bold text-2xl mb-4">Agregar tarea propia</span>
-                    <input placeholder="Titulo" type="text" required className="pl-2 pr-2 w-lg border rounded-sm"/>
-                    <textarea placeholder="Descripción" className="pl-2 pr-2 w-lg h-24 border resize-none rounded-sm" required/>
+                    <input placeholder="Titulo" type="text" required className="pl-2 pr-2 w-lg border rounded-sm" name="title" onChange={(e) => handleNewTask(e)}/>
+                    <textarea placeholder="Descripción" className="pl-2 pr-2 w-lg h-24 border resize-none rounded-sm" required name="description" onChange={(e) => handleNewTask(e)}/>
 
                     <label className="font-semibold">Fecha limite</label>
-                    <input type="date" required className="pl-2 pr-2 w-lg border rounded-sm"/>
+                    <input type="date" required className="pl-2 pr-2 w-lg border rounded-sm" name="date" onChange={(e) => handleNewTask(e)}/>
 
-                    <button className="px-4 py-1 bg-green-300 rounded-md border border-green-400 cursor-pointer hover:bg-green-400/70">Aceptar</button>
+                    <button className="px-4 py-1 bg-green-300 rounded-md border border-green-400 cursor-pointer hover:bg-green-400/70" onClick={() => addTask(newTask)}>Aceptar</button>
 
                 </div> 
                 : <div className="flex flex-col justify-center items-center gap-4">
@@ -45,7 +63,7 @@ const AddTask = () => {
                     <label className="font-semibold">Fecha limite</label>
                     <input type="date" required className="pl-2 pr-2 w-lg border rounded-sm"/>
 
-                    <button className="px-4 py-1 bg-green-300 rounded-md border border-green-400 cursor-pointer hover:bg-green-400/70">Aceptar</button>
+                    <button className="px-4 py-1 bg-green-300 rounded-md border border-green-400 cursor-pointer hover:bg-green-400/70" onClick={() => addTask(newTask)}>Aceptar</button>
 
                 </div>
                 }
