@@ -14,6 +14,10 @@ const reducer = (state, action) => {
         case "CLOSE_POPUP": {
             return({...state, flagTask: {flag: action.payload, task: ""}});
         }
+        case "ADD_TASK": {
+            return({...state, tasks: [...state.tasks, action.payload]})
+        }
+        
     }
 }
 

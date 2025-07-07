@@ -12,7 +12,7 @@ const AddTask = () => {
     const closeBtnRef = useRef();
     const [newTask, setNewTask] = useState(
         {
-            id: null,
+            id: Date.now(),
             title: "",
             description: "",
             user: state.userLogged.user,
@@ -20,21 +20,32 @@ const AddTask = () => {
             date: "",
     });
 
-    console.log(state);
 
     const closePopUp = (e) => {
         if(popUpRef.current && !popUpRef.current.contains(e.target) || closeBtnRef.current.contains(e.target)){
             dispatch({type: "CLOSE_POPUP", payload: false});
+            setNewTask({
+                id: Date.now(),
+                title: "",
+                description: "",
+                user: state.userLogged.user,
+                state: "pendiente",
+                date: "",
+        });
         }
     }
 
     const handleNewTask = (e) => {
-        setNewTask({...newTask, [e.target.name]:e.target.value});
-        setNewTask({...newTask, date: newTask.date.split("-").reverse().join("/")});
+        setNewTask({...newTask, [e.target.name]: e.target.name === "date" 
+        ? e.target.value.split("-").reverse().join("/")
+        : e.target.value});
     }
+
+    console.log(newTask);
 
     const addTask = () => {
         dispatch({type: "ADD_TASK", payload: newTask});
+        dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: {flag: !state.flagTask.flag, task: ""}})
     }
 
     return(<>
