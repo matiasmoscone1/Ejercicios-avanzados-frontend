@@ -14,7 +14,10 @@ const TaskContextProvider = ({ children }) => {
     const initialState = {
         tasks: null,
         userLogged: null,
-        flagTask: false,
+        flagTask: {
+            flag: false,
+            task: ""
+        },
         
     }
 
