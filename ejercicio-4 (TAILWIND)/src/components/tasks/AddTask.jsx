@@ -25,10 +25,8 @@ const AddTask = () => {
                 <button className="w-5 rounded-md bg-red-500 text-white cursor-pointer absolute top-0 right-0" ref={closeBtnRef}>X</button>
                 {state.flagTask.task === "myTask" 
                 ? <div className="flex flex-col justify-center items-center gap-8">
-                    <span className="font-bold text-2xl mb-6">Agregar tarea propia</span>
-                    {/*<label className="font-semibold">Titulo</label>*/}
+                    <span className="font-bold text-2xl mb-4">Agregar tarea propia</span>
                     <input placeholder="Titulo" type="text" required className="pl-2 pr-2 w-lg border rounded-sm"/>
-                    {/*<label className="font-semibold">Descripción</label>*/}
                     <textarea placeholder="Descripción" className="pl-2 pr-2 w-lg h-24 border resize-none rounded-sm" required/>
 
                     <label className="font-semibold">Fecha limite</label>
@@ -37,7 +35,20 @@ const AddTask = () => {
                     <button className="px-4 py-1 bg-green-300 rounded-md border border-green-400 cursor-pointer hover:bg-green-400/70">Aceptar</button>
 
                 </div> 
-                : <div>asdasd</div>}
+                : <div className="flex flex-col justify-center items-center gap-4">
+                    <span className="font-bold text-2xl mb-2">Agregar tarea ajena</span>
+                    <input placeholder="Titulo" type="text" required className="pl-2 pr-2 mb-2 w-lg border rounded-sm"/>
+                    <textarea placeholder="Descripción" className="pl-2 pr-2 w-lg h-24 border resize-none rounded-sm" required/>
+
+                    <label className="font-semibold">Nombre de usuario</label>
+                    <input type="text" required className="pl-2 pr-2 w-lg border rounded-sm"/>
+                    <label className="font-semibold">Fecha limite</label>
+                    <input type="date" required className="pl-2 pr-2 w-lg border rounded-sm"/>
+
+                    <button className="px-4 py-1 bg-green-300 rounded-md border border-green-400 cursor-pointer hover:bg-green-400/70">Aceptar</button>
+
+                </div>
+                }
                 
             </div>
         </div>
