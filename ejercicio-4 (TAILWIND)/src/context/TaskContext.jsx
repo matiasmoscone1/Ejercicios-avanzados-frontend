@@ -2,7 +2,7 @@ import { useReducer } from "react";
 import { useEffect } from "react";
 import { createContext } from "react"
 import reducer from "../reducer/reducer";
-//import taskData from "../data/database.json";
+import taskData from "../data/database.json";
 
 export const TaskContext = createContext();
 
@@ -10,146 +10,6 @@ const TaskContextProvider = ({ children }) => {
 
     const users = [{username: "matias", password: "hola1234"}, {username: "userprueba", 
     password: "asd1234"}, {username: "userprueba2", password: "asdasdasd"}];
-
-    let taskData = [
-        {
-            "id": 1,
-            "title": "Enviar informe mensual",
-            "description": "Preparar y enviar el informe financiero de mayo.",
-            "user": "lionelmessi",
-            "state": "completada",
-            "date": "16/05/2025"
-        },
-        {
-            "id": 2,
-            "title": "Revisar código del frontend",
-            "description": "Verificar que no haya errores en el componente de login.",
-            "user": "matias",
-            "state": "pendiente",
-            "date": "20/05/2025"
-        },
-        {
-            "id": 3,
-            "title": "Actualizar documentación",
-            "description": "Agregar ejemplos de uso en la API REST.",
-            "user": "sofiarodriguez",
-            "state": "pendiente",
-            "date": "11/03/2025"
-        },
-        {
-            "id": 4,
-            "title": "Diseñar landing page",
-            "description": "Crear el diseño inicial de la nueva landing page para marketing.",
-            "user": "matias",
-            "state": "completada",
-            "date": "25/01/2025"
-        },
-        {
-            "id": 5,
-            "title": "Test de integración",
-            "description": "Ejecutar pruebas en el backend para validar endpoints.",
-            "user": "valentinacruz",
-            "state": "pendiente",
-            "date": "12/04/2025"
-        },
-        {
-            "id": 6,
-            "title": "Optimizar base de datos",
-            "description": "Revisar índices y optimizar consultas lentas.",
-            "user": "matias",
-            "state": "completada",
-            "date": "08/02/2025"
-        },
-        {
-            "id": 7,
-            "title": "Redactar artículo técnico",
-            "description": "Escribir un blog post sobre rendimiento en React.",
-            "user": "matias",
-            "state": "pendiente",
-            "date": "27/06/2025"
-        },
-        {
-            "id": 8,
-            "title": "Configurar servidor",
-            "description": "Instalar dependencias y configurar entorno en producción.",
-            "user": "juancarlos",
-            "state": "completada",
-            "date": "14/01/2025"
-        },
-        {
-            "id": 9,
-            "title": "Crear componente reusable",
-            "description": "Desarrollar un botón reutilizable con estilos dinámicos.",
-            "user": "martina_dev",
-            "state": "completada",
-            "date": "19/02/2025"
-        },
-        {
-            "id": 10,
-            "title": "Reunión con cliente",
-            "description": "Presentar avances del dashboard y recibir feedback.",
-            "user": "emanuelperez",
-            "state": "pendiente",
-            "date": "05/03/2025"
-        },
-        {
-            "id": 11,
-            "title": "Corregir errores en login",
-            "description": "Arreglar bug al enviar formulario con campos vacíos.",
-            "user": "lucianalopez",
-            "state": "completada",
-            "date": "13/04/2025"
-        },
-        {
-            "id": 12,
-            "title": "Migrar proyecto a TypeScript",
-            "description": "Reescribir los componentes de React en TypeScript.",
-            "user": "tomyramos",
-            "state": "pendiente",
-            "date": "29/06/2025"
-        },
-        {
-            "id": 13,
-            "title": "Crear mockups",
-            "description": "Diseñar pantallas para la nueva app de reservas.",
-            "user": "bruno_dev",
-            "state": "completada",
-            "date": "09/01/2025"
-        },
-        {
-            "id": 14,
-            "title": "Implementar autenticación",
-            "description": "Agregar JWT al sistema de login.",
-            "user": "camilagarcia",
-            "state": "pendiente",
-            "date": "21/05/2025"
-        },
-        {
-            "id": 15,
-            "title": "Actualizar dependencias",
-            "description": "Ejecutar npm audit y corregir vulnerabilidades.",
-            "user": "agusferreira",
-            "state": "completada",
-            "date": "02/06/2025"
-        },
-        {
-            "id": 16,
-            "title": "Refactor de estilos",
-            "description": "Unificar estilos usando Tailwind CSS.",
-            "user": "martinrios",
-            "state": "pendiente",
-            "date": "17/03/2025"
-        },
-        {
-            "id": 17,
-            "title": "Crear seed de base de datos",
-            "description": "Agregar datos de prueba para testing.",
-            "user": "lucasb",
-            "state": "completada",
-            "date": "04/05/2025"
-        }
-    ];
-
 
     const initialState = {
         tasks: null,
@@ -166,10 +26,6 @@ const TaskContextProvider = ({ children }) => {
     useEffect(() => {
         dispatch({type: "SAVE_TASKS", payload: taskData});
     }, []);
-
-    useEffect(() => {
-        taskData = state.tasks
-    }, [state.tasks]);
 
     console.log(state);
 
