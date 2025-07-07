@@ -21,17 +21,21 @@ const AddTask = () => {
     });
 
 
+    const resetNewTask = () => {
+        setNewTask({
+            id: Date.now(),
+            title: "",
+            description: "",
+            user: state.userLogged.user,
+            state: "pendiente",
+            date: "",
+    });
+    }
+
     const closePopUp = (e) => {
         if(popUpRef.current && !popUpRef.current.contains(e.target) || closeBtnRef.current.contains(e.target)){
             dispatch({type: "CLOSE_POPUP", payload: false});
-            setNewTask({
-                id: Date.now(),
-                title: "",
-                description: "",
-                user: state.userLogged.user,
-                state: "pendiente",
-                date: "",
-        });
+            resetNewTask();
         }
     }
 
@@ -45,8 +49,11 @@ const AddTask = () => {
 
     const addTask = () => {
         dispatch({type: "ADD_TASK", payload: newTask});
-        dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: {flag: !state.flagTask.flag, task: ""}})
+        dispatch({type: "CLOSE_POPUP", payload: false});
+        resetNewTask();
     }
+
+    
 
     return(<>
         {state.flagTask.flag && (

@@ -11,7 +11,7 @@ const MyTaskList = () => {
 
     useEffect(() => {
         setFilterArray(state.tasks.filter((task) => task.user === state.userLogged.user));        
-    }, []);
+    }, [state.tasks]);
 
     return(<div className="w-full max-h-[75vh] border p-4">
         <div className="flex justify-between items-center">
