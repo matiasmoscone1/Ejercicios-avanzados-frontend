@@ -11,6 +11,9 @@ const reducer = (state, action) => {
         case "TOGGLE_ADD_TASK_FLAG": {
             return({...state, flagTask: action.payload});
         }
+        case "CLOSE_POPUP": {
+            return({...state, flagTask: action.payload});
+        }
     }
 }
 
