@@ -10,7 +10,7 @@ const GlobalTaskList = () => {
         <div className="flex justify-between items-center">
             <span className="text-lg block text-center font-semibold w-full">Todas las tareas</span>
             <button className="mr-4 font-semibold text-3xl cursor-pointer transition-transform duration-300 
-            hover:scale-150" title="Agregar tarea" onClick={() => dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: {flag: !state.flagTask, task: "globalTask"}})}>+</button>
+            hover:scale-150" title="Agregar tarea" onClick={() => dispatch({type: "TOGGLE_ADD_TASK_FLAG", payload: {flag: !state.flagTask.flag, task: "globalTask"}})}>+</button>
         </div>
         <div>
             {state.tasks.map((task) => {

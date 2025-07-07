@@ -9,7 +9,7 @@ const reducer = (state, action) => {
             return({...state, tasks: action.payload});
         }
         case "TOGGLE_ADD_TASK_FLAG": {
-            return({...state, flagTask: {...flagTask, flag: action.payload, task: action.payload.task}});
+            return({...state, flagTask: {flag: action.payload, task: action.payload.task}});
         }
         case "CLOSE_POPUP": {
             return({...state, flagTask: {flag: action.payload, task: ""}});
