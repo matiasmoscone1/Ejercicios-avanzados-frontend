@@ -18,7 +18,7 @@ const FilterTask = () => {
             <div className="h-20 border-r border-gray-400"></div>
             <DateFilter />
         </div>
-         <UserProfile />        
+         <UserProfile />   
     </div>);
 }
 export default FilterTask;
