@@ -1,5 +1,5 @@
 
-const StateFilter = ({ openPopUpFilter, closePopUpFilter }) => {
+const StateFilter = ({ openPopUpFilter }) => {
 
 
     return(<div className="w-2xs h-20 flex justify-center items-center gap-4">

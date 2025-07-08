@@ -21,6 +21,7 @@ const reducer = (state, action) => {
             return({...state, flagFilter: action.payload});
         }
         
+        
     }
 }
 

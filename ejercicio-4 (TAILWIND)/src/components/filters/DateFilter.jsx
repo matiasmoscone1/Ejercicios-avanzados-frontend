@@ -1,5 +1,5 @@
 
-const DateFilter = ({ openPopUpFilter, closePopUpFilter }) => {
+const DateFilter = ({ openPopUpFilter }) => {
 
 
     return(<div className="w-2xs h-20 flex justify-center items-center gap-4">
