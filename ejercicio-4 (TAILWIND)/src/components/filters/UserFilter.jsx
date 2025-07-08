@@ -2,8 +2,8 @@
 
 const UserFilter = () => {
 
-    return(<div className="w-xs h-20 border flex justify-center items-center gap-4">
-        <input placeholder="Nombre de usuario" className="p-2 border border-gray-500 rounded-md"/>
+    return(<div className="w-xs h-20 flex justify-center items-center gap-4">
+        <input placeholder="Nombre de usuario" type="text" className="p-2 border border-gray-500 rounded-md"/>
         <button className="p-2 pl-4 pr-4 border border-gray-500 rounded-md cursor-pointer hover:bg-gray-200/60">Filtrar</button>
     </div>)
 }
