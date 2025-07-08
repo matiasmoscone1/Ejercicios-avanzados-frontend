@@ -10,18 +10,23 @@ const FilterTask = () => {
 
     const { state, dispatch } = useContext(TaskContext);
 
-    const popUpFilter = () => {
+    const openPopUpFilter = () => {
         dispatch({type: "POPUP_FILTER", payload: true});
+    }
+
+    const closePopUpFilter = () => {
+        if(ref){}
+        dispatch({type: "CLOSE_POPUP_FILTER", payload: false});
     }
 
     return(
     <div className="flex justify-between items-center">
          <div className="flex justify-center items-center gap-8 w-full">
-            <UserFilter popUpFilter={popUpFilter} />
+            <UserFilter openPopUpFilter={openPopUpFilter} closePopUpFilter={closePopUpFilter}/>
             <div className="h-20 border-r border-gray-400"></div>
-            <StateFilter popUpFilter={popUpFilter}/>
+            <StateFilter openPopUpFilter={openPopUpFilter} closePopUpFilter={closePopUpFilter}/>
             <div className="h-20 border-r border-gray-400"></div>
-            <DateFilter popUpFilter={popUpFilter} />
+            <DateFilter openPopUpFilter={openPopUpFilter} closePopUpFilter={closePopUpFilter}/>
         </div>
          <UserProfile />
          {state.flagFilter && <PopUpFilter />}
