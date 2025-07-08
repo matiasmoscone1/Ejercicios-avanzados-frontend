@@ -12,8 +12,8 @@ const Dashboard = () => {
 
     return(
     <div className="w-screen h-screen flex justify-center items-start overflow-x-hidden">
-        <div className="w-screen h-screen border">
-            <div className="max-w-screen h-28 p-4 mt-2 border">
+        <div className="w-screen h-screen">
+            <div className="max-w-screen h-28 p-4 mt-2">
                 <FilterTask />
             </div>
             <div className="p-2 mt-2 grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-2">

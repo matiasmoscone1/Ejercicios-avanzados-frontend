@@ -13,7 +13,9 @@ const FilterTask = () => {
     <div className="flex justify-between items-center">
          <div className="flex justify-center items-center gap-8 w-full">
             <UserFilter />
+            <div className="h-20 border-r border-gray-400"></div>
             <StateFilter />
+            <div className="h-20 border-r border-gray-400"></div>
             <DateFilter />
         </div>
          <UserProfile />        
