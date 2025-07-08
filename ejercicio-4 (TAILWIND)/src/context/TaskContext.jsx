@@ -18,6 +18,7 @@ const TaskContextProvider = ({ children }) => {
             flag: false,
             task: ""
         },
+        flagFilter: false,
         
     }
 

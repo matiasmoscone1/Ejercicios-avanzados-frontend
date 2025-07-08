@@ -4,6 +4,7 @@ import UserFilter from "./UserFilter";
 import DateFilter from "./DateFilter";
 import StateFilter from "./StateFilter";
 import UserProfile from "../UserProfile";
+import PopUpFilter from "./PopUpFilter";
 
 const FilterTask = () => {
 
@@ -18,7 +19,8 @@ const FilterTask = () => {
             <div className="h-20 border-r border-gray-400"></div>
             <DateFilter />
         </div>
-         <UserProfile />   
+         <UserProfile />
+         {state.flagFilter && <PopUpFilter />}
     </div>);
 }
 export default FilterTask;
