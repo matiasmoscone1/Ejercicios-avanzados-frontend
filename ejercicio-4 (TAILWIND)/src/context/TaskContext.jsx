@@ -30,10 +30,12 @@ const TaskContextProvider = ({ children }) => {
 
     console.log(state);
 
+
     return(<TaskContext.Provider value={{ 
         state,
         users,
         dispatch,
+
 
     }}>
     { children }

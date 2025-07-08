@@ -8,16 +8,20 @@ import PopUpFilter from "./PopUpFilter";
 
 const FilterTask = () => {
 
-    const { state } = useContext(TaskContext);
+    const { state, dispatch } = useContext(TaskContext);
+
+    const popUpFilter = () => {
+        dispatch({type: "POPUP_FILTER", payload: true});
+    }
 
     return(
     <div className="flex justify-between items-center">
          <div className="flex justify-center items-center gap-8 w-full">
-            <UserFilter />
+            <UserFilter popUpFilter={popUpFilter} />
             <div className="h-20 border-r border-gray-400"></div>
-            <StateFilter />
+            <StateFilter popUpFilter={popUpFilter}/>
             <div className="h-20 border-r border-gray-400"></div>
-            <DateFilter />
+            <DateFilter popUpFilter={popUpFilter} />
         </div>
          <UserProfile />
          {state.flagFilter && <PopUpFilter />}

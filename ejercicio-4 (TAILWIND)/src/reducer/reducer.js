@@ -17,6 +17,9 @@ const reducer = (state, action) => {
         case "ADD_TASK": {
             return({...state, tasks: [...state.tasks, action.payload]})
         }
+        case "POPUP_FILTER": {
+            return({...state, flagFilter: action.payload});
+        }
         
     }
 }
