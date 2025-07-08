@@ -2,7 +2,7 @@
 
 const UserProfile = () => {
 
-    return(<div className="w-3xs h-20 border">
+    return(<div className="w-[150px] h-20 border">
 
     </div>)
 

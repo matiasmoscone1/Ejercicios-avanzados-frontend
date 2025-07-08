@@ -58,7 +58,7 @@ const AddTask = () => {
     return(<>
         {state.flagTask.flag && (
         <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50" onClick={(e) => closePopUp(e)}>
-            <div className="w-[70vw] h-[70vh] bg-white border-gray-500 rounded-md shadow-lg p-4 relative" ref={popUpRef}>
+            <div className="w-[70vw] h-[70vh] bg-white border border-gray-500 rounded-md shadow-lg p-4 relative" ref={popUpRef}>
                 <button className="w-5 rounded-md bg-red-500 text-white cursor-pointer absolute top-0 right-0" ref={closeBtnRef}>X</button>
                 {state.flagTask.task === "myTask" 
                 ? <div className="flex flex-col justify-center items-center gap-8">

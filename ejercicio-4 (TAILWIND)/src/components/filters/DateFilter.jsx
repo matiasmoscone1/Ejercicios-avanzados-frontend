@@ -2,7 +2,7 @@
 
 const DateFilter = () => {
 
-    return(<div className="w-xs h-20 border">
+    return(<div className="w-2xs h-20 border">
 
     </div>)
 }
