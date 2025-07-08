@@ -22,7 +22,7 @@ const MyTaskList = () => {
         <div>
             {filterArray.map((task) => {
                 return(<div key={task.id} className="p-2 flex justify-center items-center gap-2 border-b">
-                    <span>{task.user}</span>
+                    <span className="w-40 truncate" title={task.user}>{task.user}</span>
                     <span className="text-sm w-40 truncate" title={task.title}>{task.title}</span>
                     <span className="text-sm w-80 truncate" title={task.description}>{task.description}</span>
                     <span>{task.date}</span>
