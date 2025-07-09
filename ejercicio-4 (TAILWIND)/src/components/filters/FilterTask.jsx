@@ -5,6 +5,7 @@ import DateFilter from "./DateFilter";
 import StateFilter from "./StateFilter";
 import UserProfile from "../UserProfile";
 import PopUpFilter from "./PopUpFilter";
+import { useState } from "react";
 
 const FilterTask = () => {
 
@@ -14,7 +15,7 @@ const FilterTask = () => {
         dispatch({type: "POPUP_FILTER", payload: true});
     }
 
-
+    
 
     return(
     <div className="flex justify-between items-center">
