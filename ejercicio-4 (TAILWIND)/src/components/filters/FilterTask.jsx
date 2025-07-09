@@ -16,8 +16,8 @@ const FilterTask = () => {
     }
 
     const handleFilterState = (e) => {
-        const { name, value } = e.target;
-        dispatch({type: "FILTER_STATE", payload: { [name]:value} });
+        const { name, value, type, checked } = e.target;
+        dispatch({type: "FILTER_STATE", payload: { [name]: type === "checkbox" ? checked : value} });
     }
 
     console.log(state.filterState);
