@@ -15,16 +15,18 @@ const FilterTask = () => {
         dispatch({type: "POPUP_FILTER", payload: true});
     }
 
-    
+    const handleFilterState = (e) => {
+        //dispatch({type: "FILTER_STATE", payload: [e.target.name]:e.target.value})
+    }
 
     return(
     <div className="flex justify-between items-center">
          <div className="flex justify-center items-center gap-8 w-full">
-            <UserFilter openPopUpFilter={openPopUpFilter} />
+            <UserFilter openPopUpFilter={openPopUpFilter} handleFilterState={handleFilterState}/>
             <div className="h-20 border-r border-gray-400"></div>
-            <StateFilter openPopUpFilter={openPopUpFilter} />
+            <StateFilter openPopUpFilter={openPopUpFilter} handleFilterState={handleFilterState}/>
             <div className="h-20 border-r border-gray-400"></div>
-            <DateFilter openPopUpFilter={openPopUpFilter} />
+            <DateFilter openPopUpFilter={openPopUpFilter} handleFilterState={handleFilterState}/>
         </div>
          <UserProfile />
          {state.flagFilter && <PopUpFilter />}
