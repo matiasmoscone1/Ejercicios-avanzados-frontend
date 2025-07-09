@@ -16,8 +16,11 @@ const FilterTask = () => {
     }
 
     const handleFilterState = (e) => {
-        //dispatch({type: "FILTER_STATE", payload: [e.target.name]:e.target.value})
+        const { name, value } = e.target;
+        dispatch({type: "FILTER_STATE", payload: { [name]:value} });
     }
+
+    console.log(state.filterState);
 
     return(
     <div className="flex justify-between items-center">

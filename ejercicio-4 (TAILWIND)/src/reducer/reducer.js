@@ -20,6 +20,9 @@ const reducer = (state, action) => {
         case "POPUP_FILTER": {
             return({...state, flagFilter: action.payload});
         }
+        case "FILTER_STATE": {
+            return({...state, filterState: {...state.filterState, ...action.payload}});
+        }
         
         
     }
