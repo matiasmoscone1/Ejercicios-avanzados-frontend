@@ -19,16 +19,16 @@ const PopUpFilter = ( ) => {
 
     useEffect(() => {
         let newArray = [];
-        switch(state.filter.ref){
-            case "Usuario": 
+        switch(state.filterState.ref){
+            case "Usuario":
                 newArray = state.tasks.filter((task) => task.user === state.filterState.user)
                 setFilterArray(newArray);
                 break;
-            case "Estado": 
-                newArray = state.tasks.filter((task) => task.user === state.filterState.user)
+            case "Estado":
+                newArray = state.tasks.filter((task) => state.filterState.state === (task.state === "completada" ? true : false));
                 setFilterArray(newArray);
                 break;
-            case "Fecha": 
+            case "Fecha":
                 newArray = state.tasks.filter((task) => task.user === state.filterState.user)
                 setFilterArray(newArray);
                 break;
@@ -36,10 +36,6 @@ const PopUpFilter = ( ) => {
                 break;
         }
 
-        // if(state.filterState.ref === "Usuario"){
-        //     const newArray = state.tasks.filter((task) => task.user === state.filterState.user)
-        //     setFilterArray(newArray);
-        // }
     }, []);
 
     console.log(filterArray);
@@ -50,6 +46,7 @@ const PopUpFilter = ( ) => {
             {filterArray.map((task) => {
                 return(<div>
                     {task.user}
+                    {task.state}
                     </div>)
             })}
 
