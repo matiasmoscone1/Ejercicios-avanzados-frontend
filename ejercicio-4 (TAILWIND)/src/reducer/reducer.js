@@ -23,6 +23,9 @@ const reducer = (state, action) => {
         case "FILTER_STATE": {
             return({...state, filterState: {...state.filterState, ...action.payload}});
         }
+        case "CHANGE_FILTER_STATE_REF": {
+            return({...state, filterState: {...state.filterState, ref: action.payload}});
+        }
         
         
     }

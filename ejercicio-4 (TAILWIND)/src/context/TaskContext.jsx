@@ -22,7 +22,8 @@ const TaskContextProvider = ({ children }) => {
         filterState: {
             user: "",
             state: false,
-            date: ""
+            date: "",
+            ref: ""
         },
 
     }
