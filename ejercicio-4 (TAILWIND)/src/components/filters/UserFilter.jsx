@@ -9,7 +9,7 @@ const UserFilter = ({ openPopUpFilter, handleFilterState }) => {
         <input placeholder="Nombre de usuario" type="text" className="p-2 border border-gray-500 rounded-md" 
         name="user" onChange={(e) => handleFilterState(e)}/>
         <button className="p-2 pl-4 pr-4 border border-gray-500 rounded-md 
-        cursor-pointer hover:bg-gray-200/60" onClick={() => {dispatch({type: "CHANGE_FILTER_STATE_REF", payload: "Username"}); openPopUpFilter()}}>Filtrar</button>
+        cursor-pointer hover:bg-gray-200/60" onClick={() => {dispatch({type: "CHANGE_FILTER_STATE_REF", payload: "Usuario"}); openPopUpFilter()}}>Filtrar</button>
     </div>)
 }
 export default UserFilter;

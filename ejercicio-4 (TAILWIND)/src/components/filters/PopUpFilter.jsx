@@ -18,6 +18,7 @@ const PopUpFilter = ( ) => {
     return(<div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50" onClick={(e) => closePopUpFilter(e)}>
         <div className="w-7/10 h-9/10 bg-white border border-gray-500 rounded-md shadow-lg p-4 relative" ref={popUpFilterRef}>
             <span>Tareas filtradas por {state.filterState.ref}</span>
+            
 
         </div>
     </div>)
