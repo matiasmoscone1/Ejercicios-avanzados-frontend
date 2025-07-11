@@ -41,18 +41,19 @@ const PopUpFilter = ( ) => {
     console.log(filterArray);
 
     return(<div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50" onClick={(e) => closePopUpFilter(e)}>
-        <div className="w-7/10 h-9/10 bg-white border border-gray-500 rounded-md shadow-lg p-4 relative" ref={popUpFilterRef}>
-            <span className="p-4 text-lg block font-semibold text-center">Tareas filtradas por {state.filterState.ref}</span>
-            {filterArray.map((task) => {
-                return(<div key={task.id} className="p-2 flex justify-center items-center gap-2 border-b">
-                <span className="w-20 truncate" title={task.user}>{task.user}</span>
-                <span className="text-sm w-50 truncate" title={task.title}>{task.title}</span>
-                <span className="text-sm w-100 truncate" title={task.description}>{task.description}</span>
-                <span>{task.date}</span>
-                <span>{task.state === "pendiente" ? <input type="checkbox" /> : <input type="checkbox" checked/> }</span>            
-            </div>)
-            })}
-
+        <div className="w-7/10 h-9/10 p-4 bg-white border border-gray-500 rounded-md shadow-lg relative" ref={popUpFilterRef}>
+                <span className="p-4 text-lg block font-semibold text-center">Tareas filtradas por {state.filterState.ref}</span>
+                <div className="h-8/10 overflow-y-auto p-4">
+                    {filterArray.map((task) => {
+                        return(<div key={task.id} className="p-2 flex justify-center items-center gap-2 border-b">
+                        <span className="mr-5 w-20 truncate" title={task.user}>{task.user}</span>
+                        <span className="text-sm w-50 truncate" title={task.title}>{task.title}</span>
+                        <span className="text-sm w-90 truncate" title={task.description}>{task.description}</span>
+                        <span>{task.date}</span>
+                        <span className="ml-10">{task.state === "pendiente" ? <input type="checkbox" /> : <input type="checkbox" checked/> }</span>
+                    </div>)
+                    })}
+                </div>        
         </div>
     </div>)
 
