@@ -11,7 +11,10 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Login />}/>
-          <Route path="/dashboard" element={<Dashboard />}/>
+          <PrivateRoute>
+            <Route path="/dashboard" element={<Dashboard />}/>
+          </PrivateRoute>
+    
 
         </Routes>
 

@@ -1,11 +1,13 @@
 import { useRef } from "react";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { TaskContext } from "../context/TaskContext";
 
 
 const UserProfile = () => {
 
     const { state, dispatch } = useContext(TaskContext);
+    const navigate = useNavigate();
 
     const refPopUp = useRef();
 
@@ -18,6 +20,7 @@ const UserProfile = () => {
     const closeSession = () => {
         window.sessionStorage.removeItem("user");
         window.sessionStorage.removeItem("pass");
+        navigate("/");
         dispatch({type: "FLAG_SESSION", payload: false});
     }
 
