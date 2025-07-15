@@ -26,6 +26,9 @@ const reducer = (state, action) => {
         case "CHANGE_FILTER_STATE_REF": {
             return({...state, filterState: {...state.filterState, ref: action.payload}});
         }
+        case "FLAG_SESSION": {
+            return({...state, flagSession: action.payload});
+        }
         
         
     }

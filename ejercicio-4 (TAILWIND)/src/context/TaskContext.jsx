@@ -27,6 +27,8 @@ const TaskContextProvider = ({ children }) => {
             date: "",
             ref: ""
         },
+        flagSession: false,
+        
 
     }
 
