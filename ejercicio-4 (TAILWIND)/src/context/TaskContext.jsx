@@ -36,6 +36,11 @@ const TaskContextProvider = ({ children }) => {
 
     console.log(state);
 
+    useEffect(() => {
+        dispatch({type: "SAVE_USER", payload: {user: window.sessionStorage.getItem("user"), pass: window.sessionStorage.getItem("pass")}});
+    }, []);
+
+
 
     return(<TaskContext.Provider value={{ 
         state,

@@ -15,9 +15,7 @@ const Login = () => {
         setUserLog({...userLog, [e.target.name]: e.target.value});
     }
 
-    const saveLog = () => {
-        window.sessionStorage.setItem("user", userLog.user);
-    }
+
 
 
     const handleSubmit = (e) => {
@@ -28,8 +26,9 @@ const Login = () => {
         if(userFound){
             dispatch({type: "SAVE_USER", payload: userLog});
             setFlag(false);
+            window.sessionStorage.setItem("user", userFound.username);
+            window.sessionStorage.setItem("pass", userFound.password);
             navigate("/dashboard");
-            saveLog();
         }else{
             setFlag(true);
             setTimeout(() => {
