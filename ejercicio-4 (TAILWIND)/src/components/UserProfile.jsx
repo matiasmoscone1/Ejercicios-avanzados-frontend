@@ -15,6 +15,11 @@ const UserProfile = () => {
         }
     }
 
+    const closeSession = () => {
+        window.sessionStorage.removeItem("user");
+        window.sessionStorage.removeItem("pass");
+        dispatch({type: "FLAG_SESSION", payload: false});
+    }
 
     return(<div className="w-40 h-25 flex flex-col justify-center items-center gap-2">
         <img src="./public/images/default-avatar-prueba.png" className="w-16 h-16 rounded-full"/>
@@ -24,11 +29,13 @@ const UserProfile = () => {
             onClick={() => dispatch({type: "FLAG_SESSION", payload: true})}></img>
         </div>
         {state.flagSession && <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50" onClick={(e) => closePopUp(e)}>
-            <div className="w-1/3 h-1/3 bg-white rounded-md flex flex-col justify-between items-center" ref={refPopUp}>
+            <div className="w-1/3 h-1/3 bg-white rounded-md flex flex-col justify-between items-center shadow-lg" ref={refPopUp}>
                 <span className="flex-1 flex justify-center items-center">¿Seguro desea cerrar la sesión?</span>
                 <div className="mb-4 flex justify-center items-center gap-4">
-                    <button>Salir</button>
-                    <button>Cancelar</button>
+                    <button className="w-32 h-8 rounded bg-red-500 text-white cursor-pointer hover:bg-red-500/90"
+                    onClick={() => closeSession()}>Salir</button>
+                    <button className="w-32 h-8 rounded bg-gray-500 text-white cursor-pointer hover:bg-gray-500/90"
+                    onClick={() => dispatch({type: "FLAG_SESSION", payload: false})}>Cancelar</button>
                 </div>
             </div>
         </div>}
