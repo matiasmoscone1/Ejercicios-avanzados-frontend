@@ -11,12 +11,12 @@ const PrivateRoute = ({ element }) => {
     console.log(state);
 
     useEffect(() => {
-        if(state.userLogged.user === null && state.userLogged.pass === null){
+        if(!state.userLogged.user && !state.userLogged.pass){
             navigate("/");
-        }else{
-            return element;
         }
     }, [state.userLogged]);
+
+    return element;
 
 }
 export default PrivateRoute;
