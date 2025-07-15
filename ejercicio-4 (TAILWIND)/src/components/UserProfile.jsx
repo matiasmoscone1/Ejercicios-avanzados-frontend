@@ -10,7 +10,7 @@ const UserProfile = () => {
         <img src="./public/images/default-avatar-prueba.png" className="w-16 h-16 rounded-full"/>
         <div className="flex justify-center items-center gap-4">
             <span className="font-semibold">{state.userLogged.user}</span>
-            <img src="./public/images/close-session.png" className="w-5 h-5 rotate-180 cursor-pointer hover:scale-125 duration-300 hover:shadow-lg/80"></img>
+            <img src="./public/images/close-session.png" className="w-5 h-5 rotate-180 cursor-pointer hover:scale-125 duration-300 fill-white hover:drop-shadow"></img>
         </div>
     </div>)
 
