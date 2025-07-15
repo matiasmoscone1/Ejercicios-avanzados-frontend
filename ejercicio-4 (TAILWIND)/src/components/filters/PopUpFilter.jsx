@@ -53,7 +53,7 @@ const PopUpFilter = ( ) => {
                         <span className="basis-auto text-center">{task.state === "pendiente" ? <input type="checkbox" /> : <input type="checkbox" checked/> }</span>
                     </div>)
                     })}
-                </div>        
+                </div>
         </div>
     </div>)
 

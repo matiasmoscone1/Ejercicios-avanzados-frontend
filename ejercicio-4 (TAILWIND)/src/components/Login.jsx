@@ -15,6 +15,11 @@ const Login = () => {
         setUserLog({...userLog, [e.target.name]: e.target.value});
     }
 
+    const saveLog = () => {
+        window.sessionStorage.setItem("user", userLog.user);
+    }
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -24,6 +29,7 @@ const Login = () => {
             dispatch({type: "SAVE_USER", payload: userLog});
             setFlag(false);
             navigate("/dashboard");
+            saveLog();
         }else{
             setFlag(true);
             setTimeout(() => {
