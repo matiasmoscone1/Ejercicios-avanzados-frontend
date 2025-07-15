@@ -2,6 +2,7 @@ import Login from "./components/Login"
 import TaskContextProvider from "./context/TaskContext"
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+import PrivateRoute from "./routes/PrivateRoute";
 
 function App() {
   
@@ -11,10 +12,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Login />}/>
-          <PrivateRoute>
-            <Route path="/dashboard" element={<Dashboard />}/>
-          </PrivateRoute>
-    
+          <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />}/>}/>
+          
+
 
         </Routes>
 

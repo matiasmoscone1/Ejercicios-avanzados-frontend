@@ -1,18 +1,22 @@
+import { useEffect } from "react";
 import { useContext } from "react";
-import Dashboard from "../components/Dashboard";
+import { useNavigate } from "react-router-dom";
 import { TaskContext } from "../context/TaskContext";
 
-const PrivateRoute = () => {
+const PrivateRoute = ({ element }) => {
 
     const { state } = useContext(TaskContext);
+    const navigate = useNavigate();
 
-    if(!(state.userLogged !== null)){
-        
-    }
+    console.log(state);
 
-    return(<>
-        <Dashboard />
-    </>);
+    useEffect(() => {
+        if(state.userLogged.user === null && state.userLogged.pass === null){
+            navigate("/");
+        }else{
+            return element;
+        }
+    }, [state.userLogged]);
 
 }
 export default PrivateRoute;
