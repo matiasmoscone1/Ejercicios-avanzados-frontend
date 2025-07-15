@@ -1,5 +1,4 @@
 import { useReducer } from "react";
-import { useEffect } from "react";
 import { createContext } from "react"
 import reducer from "../reducer/reducer";
 import taskData from "../data/database.json";
@@ -12,7 +11,7 @@ const TaskContextProvider = ({ children }) => {
     password: "asd1234"}, {username: "userprueba2", password: "asdasdasd"}];
 
     const initialState = {
-        tasks: null,
+        tasks: taskData,
         userLogged: {
             user: window.sessionStorage.getItem("user"),
             pass: window.sessionStorage.getItem("pass")
@@ -33,17 +32,7 @@ const TaskContextProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    useEffect(() => {
-        dispatch({type: "SAVE_TASKS", payload: taskData});
-    }, []);
-
     console.log(state);
-
-    // useEffect(() => {
-    //     console.log(window.sessionStorage.getItem("user"), window.sessionStorage.getItem("pass"));
-    //     dispatch({type: "SAVE_USER", payload: {user: window.sessionStorage.getItem("user"), pass: window.sessionStorage.getItem("pass")}});
-    // }, []);
-
 
 
     return(<TaskContext.Provider value={{ 
