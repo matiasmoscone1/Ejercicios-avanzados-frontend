@@ -13,7 +13,10 @@ const TaskContextProvider = ({ children }) => {
 
     const initialState = {
         tasks: null,
-        userLogged: null,
+        userLogged: {
+            user: window.sessionStorage.getItem("user"),
+            pass: window.sessionStorage.getItem("pass")
+        },            
         flagTask: {
             flag: false,
             task: ""
@@ -36,9 +39,10 @@ const TaskContextProvider = ({ children }) => {
 
     console.log(state);
 
-    useEffect(() => {
-        dispatch({type: "SAVE_USER", payload: {user: window.sessionStorage.getItem("user"), pass: window.sessionStorage.getItem("pass")}});
-    }, []);
+    // useEffect(() => {
+    //     console.log(window.sessionStorage.getItem("user"), window.sessionStorage.getItem("pass"));
+    //     dispatch({type: "SAVE_USER", payload: {user: window.sessionStorage.getItem("user"), pass: window.sessionStorage.getItem("pass")}});
+    // }, []);
 
 
 
