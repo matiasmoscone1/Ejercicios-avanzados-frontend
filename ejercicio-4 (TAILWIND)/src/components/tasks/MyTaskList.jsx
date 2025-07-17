@@ -26,7 +26,8 @@ const MyTaskList = () => {
                     <span className="w-40 truncate" title={task.user}>{task.user}</span>
                     <span className="text-sm w-60 truncate group">{task.title}
                     <div className="w-100 h-10 justify-center items-center absolute top-5 left-50 border bg-white rounded-sm hidden group-hover:flex z-50">{task.title}</div></span>
-                    <span className="text-sm w-80 truncate" title={task.description}>{task.description}</span>
+                    <span className="text-sm w-60 truncate group">{task.description}
+                    <div className="w-120 h-10 justify-center items-center absolute top-5 left-50 border bg-white rounded-sm hidden group-hover:flex z-50">{task.description}</div></span>
                     <span>{task.date}</span>
                     <span>{task.state === "pendiente" ? <input type="checkbox" /> : <input type="checkbox" checked/> }</span>
                 
