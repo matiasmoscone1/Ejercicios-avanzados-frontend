@@ -22,10 +22,10 @@ const MyTaskList = () => {
         </div>
         <div>
             {filterArray.map((task) => {
-                return(<div key={task.id} className="p-2 flex justify-center items-center gap-2 border-b">
+                return(<div key={task.id} className="p-2 flex justify-center items-center gap-2 border-b relative">
                     <span className="w-40 truncate" title={task.user}>{task.user}</span>
-                    <span className="text-sm w-60 relative truncate group" title={task.title}>{task.title}
-                    <div className="w-100 h-20 absolute top-full border rounded-sm none group-hover:block z-50">{task.title}</div></span>
+                    <span className="text-sm w-60 truncate group">{task.title}
+                    <div className="w-100 h-10 justify-center items-center absolute top-5 left-50 border bg-white rounded-sm hidden group-hover:flex z-50">{task.title}</div></span>
                     <span className="text-sm w-80 truncate" title={task.description}>{task.description}</span>
                     <span>{task.date}</span>
                     <span>{task.state === "pendiente" ? <input type="checkbox" /> : <input type="checkbox" checked/> }</span>
