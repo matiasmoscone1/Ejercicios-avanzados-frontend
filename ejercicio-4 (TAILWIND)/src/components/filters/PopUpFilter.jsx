@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useState } from "react";
+import { useMemo } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { TaskContext } from "../../context/TaskContext";
@@ -9,7 +10,7 @@ const PopUpFilter = ( ) => {
 
     const { state, dispatch } = useContext(TaskContext);
     const popUpFilterRef = useRef();
-    const [filterArray, setFilterArray] = useState([]);
+    //const [filterArray, setFilterArray] = useState([]);
 
     const closePopUpFilter = (e) => {
         if(popUpFilterRef.current && !popUpFilterRef.current.contains(e.target)){
@@ -17,6 +18,7 @@ const PopUpFilter = ( ) => {
         }
     }
 
+    /*
     useEffect(() => {
         let newArray = [];
         switch(state.filterState.ref){
@@ -36,7 +38,23 @@ const PopUpFilter = ( ) => {
                 break;
         }
 
+    }, [state.tasks, state.filterState]);*/
+
+    const filterArray = useMemo(() => {
+        switch(state.filterState.ref){
+            case "Usuario":
+                return state.tasks.filter((task) => task.user === state.filterState.user);
+            case "Estado":
+                return state.tasks.filter((task) => state.filterState.state === (task.state === "completada" ? true : false));
+            case "Fecha":
+                return state.tasks.filter((task) => task.date === state.filterState.date.split("-").reverse().join("/"));
+            default:
+                break;
+        }
+
     }, [state.tasks, state.filterState]);
+
+
 
     console.log(filterArray);
 

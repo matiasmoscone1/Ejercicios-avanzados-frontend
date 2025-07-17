@@ -23,7 +23,7 @@ const GlobalTaskList = () => {
         setShowTooltip(false);
       };
 
-    return(<div className="w-full max-h-[75vh] overflow-y-auto overflow-x-visible border rounded-sm p-4">
+    return(<div className="w-full max-h-[75vh] overflow-y-auto border rounded-sm p-4">
         <div className="flex justify-between items-center">
             <span className="text-lg block text-center font-semibold w-full">Todas las tareas</span>
             <button className="mr-4 font-semibold text-3xl cursor-pointer transition-transform duration-300 

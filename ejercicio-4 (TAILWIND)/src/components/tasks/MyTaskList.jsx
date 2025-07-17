@@ -14,7 +14,7 @@ const MyTaskList = () => {
         setFilterArray(state.tasks.filter((task) => task.user === state.userLogged.user));        
     }, [state.tasks]);
 
-    return(<div className="w-full max-h-[75vh] overflow-y-auto overflow-x-hidden border rounded-sm p-4">
+    return(<div className="w-full max-h-[75vh] overflow-y-auto border rounded-sm p-4">
         <div className="flex justify-between items-center">
             <span className="text-lg block text-center font-semibold w-full">Mis tareas</span>
             <button className="mr-4 font-semibold text-3xl cursor-pointer transition-transform duration-300 
